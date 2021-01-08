@@ -1,0 +1,195 @@
+
+<div  *ngIf="this.id != null">
+<app-chef></app-chef>
+
+<div class="mx-5">
+    <button class="btn btn-success" (click)="this.isButtonVisible = true;this.count=this.count+1;">
+        +
+    </button>
+    
+    <button class="btn btn-warning" (click)="this.isButtonVisible = true;this.count=this.count-1;">
+        - 
+    </button>
+    
+</div>
+
+
+
+
+<div class="container">
+
+   <form>
+        <div *ngIf="this.count >= 0" class="form-row align-items-center">
+          <div class="col-auto my-1 mx-5">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Produits</label>
+            <select #selectedProduit1 class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="onChange($event.target.value)" >
+                <option selected>Choisir...</option>  
+             <option *ngFor="let produit of produits | async" value="{{produit.id}}" >{{produit.name}}</option>    
+            </select>
+          </div>
+
+          <div class="col-auto my-1 mx-5">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Fournisseur</label>
+            <select #selectedFournisseur1 class="custom-select mr-sm-2" id="inlineFormCustomSelect" >
+              <option selected>Choisir...</option>
+              <option *ngFor="let fournisseur of fournisseurs | async" value="{{fournisseur.id}}">{{fournisseur.name}}</option>
+
+            </select>
+          </div>
+
+          <div class="col-auto my-2  ">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Quantité</label>
+            <input class="form-control" type="number" id="inlineFormCheck" name="qt" [(ngModel)]="qts[0]">
+
+          </div>
+
+          <div class="col-auto my-1 mx-5">
+            <button type="submit" (click)="createLigne1(selectedProduit1.value,selectedFournisseur1.value)" class="btn btn-primary">Ajouter</button>
+          </div>
+        </div>
+    </form>
+
+<div *ngIf="this.count >= 1">
+ <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1 mx-5">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Produits</label>
+            <select #selectedProduit2  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option selected>Choisir...</option>  
+             <option *ngFor="let produit of produits | async" value="{{produit.id}}">{{produit.name}}</option>    
+            </select>
+          </div>
+
+          <div class="col-auto my-1 mx-5">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Fournisseur</label>
+            <select #selectedFournisseur2 class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+              <option selected>Choisir...</option>
+              <option *ngFor="let fournisseur of fournisseurs | async" value="{{fournisseur.id}}">{{fournisseur.name}}</option>
+
+            </select>
+          </div>
+
+          <div class="col-auto my-2  ">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Quantité</label>
+            <input class="form-control" type="number" id="inlineFormCheck" name="qts" [(ngModel)]="qts[1]">
+
+          </div>
+
+          <div class="col-auto my-1 mx-5">
+            <button type="submit" (click)=createLigne2(selectedProduit2.value,selectedFournisseur2.value) class="btn btn-primary">Ajouter</button>
+          </div>
+        </div>
+    </form>
+    </div>
+
+    <div *ngIf="this.count >= 2">
+       <form >
+            <div class="form-row align-items-center">
+              <div class="col-auto my-1 mx-5">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Produits</label>
+                <select #selectedProduit3  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choisir...</option>  
+                 <option *ngFor="let produit of produits | async"  value="{{produit.id}}" >{{produit.name}}</option>    
+                </select>
+              </div>
+    
+              <div class="col-auto my-1 mx-5">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Fournisseur</label>
+                <select #selectedFournisseur3 class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Choisir...</option>
+                  <option *ngFor="let fournisseur of fournisseurs | async" value="{{fournisseur.id}}">{{fournisseur.name}}</option>
+    
+                </select>
+              </div>
+    
+              <div class="col-auto my-2  ">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Quantité</label>
+                <input class="form-control" type="number" id="inlineFormCheck" name="qts" [(ngModel)]="qts[2]">
+    
+              </div>
+    
+              <div class="col-auto my-1 mx-5">
+                <button type="submit" (click)=createLigne3(selectedProduit3.value,selectedFournisseur3.value) class="btn btn-primary">Ajouter</button>
+              </div>
+            </div>
+       </form>
+      </div>
+      <div *ngIf="this.count >= 3">
+      <form>
+            <div class="form-row align-items-center">
+              <div class="col-auto my-1 mx-5">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Produits</label>
+                <select #selectedProduit4  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choisir...</option>  
+                 <option *ngFor="let produit of produits | async"  value="{{produit.id}}" >{{produit.name}}</option>    
+                </select>
+              </div>
+    
+              <div class="col-auto my-1 mx-5">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Fournisseur</label>
+                <select #selectedFournisseur4 class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Choisir...</option>
+                  <option *ngFor="let fournisseur of fournisseurs | async" value="{{fournisseur.id}}">{{fournisseur.name}}</option>
+    
+                </select>
+              </div>
+    
+              <div class="col-auto my-2  ">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Quantité</label>
+                <input class="form-control" type="number" id="inlineFormCheck" name="qts" [(ngModel)]="qts[3]">
+    
+              </div>
+    
+              <div class="col-auto my-1 mx-5">
+                <button type="submit" (click)=createLigne4(selectedProduit4.value,selectedFournisseur4.value) class="btn btn-primary">Ajouter</button>
+              </div>
+            </div>
+      </form>
+      </div>
+      <div *ngIf="this.count >= 4">
+      <form>
+            <div class="form-row align-items-center">
+              <div class="col-auto my-1 mx-5">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Produits</label>
+                <select #selectedProduit5  class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choisir...</option>  
+                 <option *ngFor="let produit of produits | async"  value="{{produit.id}}" >{{produit.name}}</option>    
+                </select>
+              </div>
+    
+              <div class="col-auto my-1 mx-5">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Fournisseur</label>
+                <select #selectedFournisseur5 class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option selected>Choisir...</option>
+                  <option *ngFor="let fournisseur of fournisseurs | async" value="{{fournisseur.id}}">{{fournisseur.name}}</option>
+    
+                </select>
+              </div>
+    
+              <div class="col-auto my-2  ">
+                <label class="mr-sm-2" for="inlineFormCustomSelect">Quantité</label>
+                <input class="form-control" type="number" id="inlineFormCheck" name="qts" [(ngModel)]="qts[4]">
+    
+              </div>
+    
+              <div class="col-auto my-1 mx-5">
+                <button type="submit" (click)=createLigne5(selectedProduit5.value,selectedFournisseur5.value) class="btn btn-primary">Ajouter</button>
+                
+              </div>
+            </div>
+        </form>
+      </div>
+
+   
+</div>
+</div>
+
+<div [hidden]="!submitted" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">
+        Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+      </div>
+    </div>
+  </div>
+</div>

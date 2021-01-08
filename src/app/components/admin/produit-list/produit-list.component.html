@@ -1,0 +1,43 @@
+<div *ngIf="this.id !=null">
+<app-admin></app-admin>
+<div class="container">
+<div class="row ">
+  <div class="col-md-6 mx-auto ">
+    <button class="btn " (click)="addProduit()"><img src="assets/images/addProduit.png"/></button><br><span>Ajouer un produit</span>
+  </div>
+</div>
+</div>
+   
+<div class="row">
+    <div class="col-md-6 mx-auto" style="margin-top: 50px;">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Quantity</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let produit of Produits | async">
+                    <td>{{produit.name}}</td>
+                    <td>{{produit.price}}</td>
+                    <td>{{produit.quantity}}</td>
+                    <td><button class="btn btn-danger"(click)="deleteProduit(produit.id)">Delete</button></td>
+                </tr>
+            </tbody>
+            </table>
+</div>
+</div>
+</div>
+
+<div [hidden]="!submitted" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">
+        Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+      </div>
+    </div>
+  </div>
+</div>

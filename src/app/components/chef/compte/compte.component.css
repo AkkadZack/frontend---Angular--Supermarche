@@ -1,0 +1,6 @@
+div.container{
+    display: flex;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 25px;
+}

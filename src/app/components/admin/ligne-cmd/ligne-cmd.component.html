@@ -1,0 +1,39 @@
+<div *ngIf="this.id !=null">
+<app-admin></app-admin>
+<div style="align-items: center;">
+
+<div class="row">
+  <div class="col-md-2 ml-5 mt-5">
+  </div>
+</div>
+
+<div class="row">
+            
+    <div class="col-md-7 mx-auto" >
+      <h4 style="text-align: center;margin-bottom: 50px;;">Les lignes de commandes</h4>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Ligne de command</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Nom de produit</th>
+                
+                <th scope="col">Prix</th>
+              </tr>
+            </thead>
+            <tbody>
+               
+              <tr *ngFor="let lcmd of lcmds | async">
+                    <th>{{lcmd.id}}</th>
+                    <td>{{lcmd.qt}}</td>
+                    <td > {{lcmd.produit.name}}</td>
+              
+                    <td>{{lcmd.produit.price}} DH</td>
+
+                    
+                </tr> 
+            </tbody>
+            </table>
+    </div>
+</div>
+</div></div>

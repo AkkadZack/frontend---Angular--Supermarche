@@ -1,0 +1,62 @@
+<div *ngIf="this.id !=null">
+ <div class="container">
+  
+     <div class="col-md-6 mx-auto">
+        
+         <form (ngSubmit)="onSubmit()" style="margin-top: 50px;">
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Nom</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="user.name"  placeholder="NOM">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Prénom</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="prenom" name="prenom" required [(ngModel)]="user.prenom" placeholder="PRENOM">
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">CNI</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="cni" name="cni" required [(ngModel)]="user.cni" placeholder="LA CARTE NATIONALE D'IDENTITÉ ">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Tel</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="tel" name="tel" required [(ngModel)]="user.tel" placeholder="NUMERO DE TELEPHONE">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="user.email" placeholder="EMAIL">
+                </div>
+              </div>
+           
+            <div class="form-group row">
+              <div class="col-sm-10" style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Modifier</button>
+              </div>
+            </div>
+          </form>
+        
+     </div>
+ </div>
+</div>
+
+
+<div [hidden]="!submitted" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">
+        Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+  

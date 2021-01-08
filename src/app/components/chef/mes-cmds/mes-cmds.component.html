@@ -1,0 +1,54 @@
+<div  *ngIf="this.id != null">
+<app-chef></app-chef>
+<div style="align-items: center;">
+
+    <div class="row">
+      <div class="col-md-2 ml-5 mt-5">
+      </div>
+    </div>
+    
+    <div class="row">
+     
+        <div class="col-md-10 mx-auto" style="margin-top: 50px;">
+          <h4 style="text-align: center;margin-bottom: 50px;;">Les commandes effectué</h4>
+           <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID Command</th>
+                    <th scope="col">Nom chef</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Etat</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                  <tr *ngFor="let cmd of cmds | async">
+                        <td>{{cmd.id}}</td>
+                        <td>{{cmd.user.name}}</td>
+                        <td>{{cmd.date}}</td>
+                        <td>{{cmd.etat}}</td> 
+                        <td><button class="btn btn-info" (click)="detailCmd(cmd.id)">Detail</button></td>
+                       
+                      <td><button class="btn btn-danger" (click)="deleteCmd(cmd.id)" >Supprimer</button></td>
+    
+    
+                        
+                    </tr> 
+                </tbody>
+                </table>
+        </div>
+    </div>
+    </div></div>
+
+    <div [hidden]="!submitted" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger" role="alert">
+            Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+          </div>
+        </div>
+      </div>
+    </div>

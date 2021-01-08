@@ -1,0 +1,33 @@
+<div *ngIf="this.id !=null">
+<app-admin></app-admin>
+<section>
+    <div>
+    <h3>  Bonjour Admin </h3>
+    <h5>  Cliquez sur :  </h5>
+    <table>
+        <thead>
+            <tr>
+            <th>L'icone </th>
+            <th>La fonction</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr><td><img src="assets/images/usr.png"/></td><td>Pour voir la gestion des comptes des chefs, vous pouvez ajouter,supprimer ou bien modifier un compte quelconque</td></tr>
+            <tr><td><img src="assets/images/stock.png"/></td><td>Pour visualiser en details les commandes , vous pouvez valider, rejeter ou bien supprimer une commande</td></tr>
+            <tr><td><img src="assets/images/Produits.png"/></td><td>Pour la gestion de produits où vous pouvez ajouter ou supprimer un produit de votre choix</td></tr>
+            <tr><td><img src="assets/images/admin2.png"/></td><td>Pour modifier les données de votre compte ; mot de pass et email inclus</td></tr>
+        </tbody>
+    </table>
+    </div>
+</section>
+</div>
+
+<div [hidden]="!submitted" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+          Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+        </div>
+      </div>
+    </div>
+  </div>

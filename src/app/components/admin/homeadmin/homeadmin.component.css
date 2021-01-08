@@ -1,0 +1,15 @@
+section{
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+table{
+    margin-left: 200px;
+    text-align: left;
+    border: 1px solid rgb(116, 116, 116);
+
+}
+table thead tr{
+    text-align: center;
+    background-color: rgb(116, 116, 116);
+}

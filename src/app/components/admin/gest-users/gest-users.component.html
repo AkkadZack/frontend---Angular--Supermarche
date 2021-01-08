@@ -1,0 +1,54 @@
+
+
+<div *ngIf="this.userid !=null">
+<app-admin></app-admin>
+
+<div style="align-items: center;">
+
+<div class="row">
+  <div class="col-md-2  mx-auto">
+
+    <button title="Ajouter un chef" class="btn " (click)="toaddUser()"><img src="assets/images/add-chef.png"/></button>
+    <br><span >Ajouter un chef</span>
+  </div>  
+</div>
+
+<div class="row">
+ 
+    <div class="col-md-7 mx-auto" style="margin-top: 30px;">
+      <h4 style="text-align: center;margin-bottom: 50px;;">Gestion des Chefs</h4>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">CNI</th>
+                <th scope="col">Tel</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users | async">
+                    <td>{{user.name}}</td>
+                    <td>{{user.prenom}}</td>
+                    <td>{{user.cni}}</td>
+                    <td>{{user.tel}}</td>
+                    <td><button class="btn btn-warning" (click)="updateUser(user.id)">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+                </tr>
+            </tbody>
+            </table>
+    </div>
+</div>
+</div></div>
+
+<div [hidden]="!submitted" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">
+        Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+      </div>
+    </div>
+  </div>
+</div>

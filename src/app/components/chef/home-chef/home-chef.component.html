@@ -1,0 +1,35 @@
+<div  *ngIf="this.id != null">
+    <app-chef></app-chef>
+    <section>
+        <div>
+        <h3>  Bonjour Mr {{user.name}}  </h3>
+        <h5>  Cliquez sur :  </h5>
+        <table>
+            <thead>
+                <tr>
+                <th>L'icone </th>
+                <th>La fonction</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr><td><img src="assets/images/commande.png"/></td><td>Pour commander des produits à votre rayon, vous pouvez ajouter plusieurs lignes de commande sur une seul page </td></tr>
+                <tr><td><img src="assets/images/stock.png"/></td><td>Pour visualiser en details les commandes que vous avez effectué </td></tr>
+                <tr><td><img src="assets/images/chef.png"/></td><td>Pour modifier les données de votre compte ; mot de pass et email inclus</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </section></div>
+
+    <div [hidden]="!submitted" class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-danger" role="alert">
+              Veuillez s'authentifier sur ce lien  <a href="/login">lien</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    
+    

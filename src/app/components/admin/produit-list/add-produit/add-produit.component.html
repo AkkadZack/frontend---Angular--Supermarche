@@ -1,0 +1,29 @@
+<div *ngIf="this.id !=null">
+
+<app-admin></app-admin>
+
+  <div class="container">
+<div style="width: 400px;">
+    <form (ngSubmit)="OnSubmit()">
+        <div class="form-group">
+            <label for="name">Nom :</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="produit.name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Price :</label>
+            <input type="text" class="form-control" id="price" required [(ngModel)]="produit.price" name="price">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Quantite :</label>
+            <input type="text" class="form-control" id="quantity" required [(ngModel)]="produit.quantity" name="quantity">
+        </div>
+       <br>
+       <br>
+       <br>
+       <button class="btn btn-primary" type="submit" >Ajouter Produit</button>
+    </form>
+</div>
+
+  </div></div>
